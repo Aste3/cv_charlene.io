@@ -1,6 +1,9 @@
 // CV Propre - JavaScript pour interactivité
 
-alert("Bienvenue sur mon CV interactif ! Cliquez sur les sections pour en savoir plus sur mes compétences et expériences. N'hésitez pas à changer de thème et de langue pour une expérience personnalisée. Bonne visite ! PS je suis en train de développer ce CV, alors certaines fonctionnalités sont encore en cours de construction. Merci de votre patience !");
+const isIndexPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+if (isIndexPage) {
+  alert("Bienvenue sur mon CV interactif ! Cliquez sur les sections pour en savoir plus sur mes compétences et expériences. N'hésitez pas à changer de thème et de langue pour une expérience personnalisée. Bonne visite ! PS je suis en train de développer ce CV, alors certaines fonctionnalités sont encore en cours de construction. Merci de votre patience !");
+}
 
 // Mode dark/light
 const themeBtn = document.getElementById("themeBtn");
