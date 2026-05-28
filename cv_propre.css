@@ -86,6 +86,7 @@ body.dark-mode button {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    box-shadow: 4px 5px white;
 }
 
 .conteneur-3colonnes .colonne svg {
@@ -99,7 +100,6 @@ body.dark-mode button {
 }
 #bureautique-btn{
     background-color: rgb(255, 46, 46);
-    color: white;
 }
 #bureautique-btn:hover{
     transform: scale(1.05);
@@ -107,7 +107,6 @@ body.dark-mode button {
 }
 #horticulture-btn{
     background-color: rgb(6, 220, 31);
-    color: white;
 }
 #horticulture-btn:hover{
     transform: scale(1.05);
@@ -115,11 +114,19 @@ body.dark-mode button {
 }
 #graphisme-btn{
     background-color: rgb(177, 46, 136);
-    color: white;
 }
 #graphisme-btn:hover{
     transform: scale(1.05);
     background-color:rgb(176, 69, 147);
+}
+
+body.light-mode .conteneur-3colonnes .colonne {
+    color: #000000;
+    box-shadow: 4px 6px rgb(0, 0, 0);
+}
+
+body.dark-mode .conteneur-3colonnes .colonne {
+    box-shadow: 4px 6px rgb(57, 57, 57);
 }
 
 
