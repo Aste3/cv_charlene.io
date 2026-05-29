@@ -1,4 +1,11 @@
 // CV Propre - JavaScript pour interactivité
+// a rerregarder pour les commentaires et les alertes
+window.addEventListener("load", () => {
+  const hash = location.hash.replace("#", "");
+  if (hash) {
+    showSection(hash);
+  }
+});
 
 const isIndexPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
 if (isIndexPage) {

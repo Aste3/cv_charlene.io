@@ -56,37 +56,129 @@ body.dark-mode button {
     /* border: 2px solid white; */
 
 }
+.introduction {
+    height: auto;
+    min-height: 2rem;
+}
+.introduction p{
+    margin-top: 15px;
+    font-size: 1rem;
+}
 
 /* Section */
 .conteneur-3colonnes{
     display:flex;
-    justify-content: space-between;
+    justify-content:center;
     align-items:flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
     height:auto;
-    /* border: 2px solid white; */
-    margin-top: 30px;
-    width:70%;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin: 30px auto 0;
+    max-width: 900px;
+    padding: 0 10px;
 }
-.conteneur-3colonnes .colonne{
-    min-width: 50px;
-    min-height: 50px;
-    width: 20%;
-    height: 20%;
-    aspect-ratio: 1;
+.conteneur-3colonnes .button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(128, 128, 128, 0.08);
+    border-radius: 16px;
+    padding: 18px 16px 12px;
+    min-width: 140px;
+    max-width: 180px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: sectionFadeIn 0.6s ease forwards;
+    animation-delay: 0.15s;
+}
+.conteneur-3colonnes .button-container p{
+    margin: 12px 0 0;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+.conteneur-3colonnes .button-container .colonne{
+    width: 96px;
+    height: 96px;
+    min-width: 96px;
+    min-height: 96px;
     padding: 0;
     border-radius: 50%;
     border: none;
     font-size: 12px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    box-shadow: 4px 5px white;
+    box-shadow: 4px 5px rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transform: scale(0.7);
+    animation: buttonPop 0.35s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+#bureautique-btn{
+    background-color: rgb(255, 46, 46);
+    animation-delay: 0.35s;
+}
+#bureautique-btn:hover{
+    background-color:rgb(252, 96, 96);
+    transform: scale(1.05);
+}
+#horticulture-btn{
+    background-color: rgb(6, 220, 31);
+    animation-delay: 0.55s;
+}
+#horticulture-btn:hover{
+    background-color:rgb(71, 224, 89);
+    transform: scale(1.05);
+}
+#graphisme-btn{
+    background-color: rgb(177, 46, 136);
+    animation-delay: 0.75s;
+}
+#graphisme-btn:hover{
+    background-color:rgb(176, 69, 147);
+    transform: scale(1.05);
+}
+body.light-mode .conteneur-3colonnes .button-container{
+    border-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(128, 128, 128, 0.08);
+}
+body.dark-mode .conteneur-3colonnes .button-container{
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+body.light-mode .conteneur-3colonnes .button-container p,
+body.light-mode .conteneur-3colonnes .button-container .colonne{
+    color: #000000;
+}
+body.dark-mode .conteneur-3colonnes .button-container p,
+body.dark-mode .conteneur-3colonnes .button-container .colonne{
+    color: #ffffff;
+}
+
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonPop {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .conteneur-3colonnes .colonne svg {
@@ -95,28 +187,29 @@ body.dark-mode button {
     filter: brightness(0) saturate(100%);
 }
 
+
 .conteneur-3colonnes .colonne svg image {
     filter: brightness(0) saturate(100%);
 }
 #bureautique-btn{
     background-color: rgb(255, 46, 46);
+    transform: scale(1.05);
 }
 #bureautique-btn:hover{
-    transform: scale(1.05);
     background-color:rgb(252, 96, 96);
+    transform: scale(1.05);
 }
 #horticulture-btn{
     background-color: rgb(6, 220, 31);
+    transform: scale(1.05);
 }
 #horticulture-btn:hover{
-    transform: scale(1.05);
     background-color:rgb(71, 224, 89);
 }
 #graphisme-btn{
     background-color: rgb(177, 46, 136);
 }
 #graphisme-btn:hover{
-    transform: scale(1.05);
     background-color:rgb(176, 69, 147);
 }
 
@@ -209,6 +302,11 @@ ul{
     margin-top: 15px;
     text-align: left;
     margin-left: 10%;
+    padding-left: 1rem;
+}
+
+ul li + li {
+    margin-top: 30px;
 }
 
 /* ANIMATIONS */

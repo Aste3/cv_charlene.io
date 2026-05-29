@@ -9,6 +9,9 @@
     <!-- LIEN VERS LE CSS -->
     <link rel="stylesheet" href="cv_propre.css" />
     <link rel="icon" type="image/png" href="./public/ico/favicon-32x32.png" />
+    <a href="#bureautique">Aller à la section Bureautique</a>
+    <a href="#horticulture">Aller à la section Horticulture</a>
+    <a href="#graphisme">Aller à la section Graphisme</a>
 
 </head>
 
@@ -17,6 +20,7 @@
 
 
     <div class="center-container">
+        <!-- NAVBAR -->
         <header class="navbar">
             <div class="nav-container">
 
@@ -51,81 +55,160 @@
         </header>
 
 
-        <!-- Un ajout sympa ca peut etre un bouton pour switcher la langue -->
+        <!-- Titre -->
         <div class="title">
             <h1>Charlène C. </h1>
             <h2>Montreal, QC<br>Tech, Art et Production Horticole</h2>
         </div>
 
-
+        <!-- Introdcution -->
         <section class="introduction">
-            <p>Mon parcours m'a permis de développer des compétences variées, autant dans le travail manuel et créatif que dans les tâches administratives. Que ce soit en horticulture, en bureautique ou en graphisme, j’apprécie les emplois où je peux être autonome, efficace et apporter des idées concrètes à une équipe.</p>
+            <p>J'ai développé, au fil de mon parcours, des compétences variées autant dans le travail manuel et créatif que dans les tâches administratives. 
+                Que ce soit en horticulture, en bureautique ou en graphisme, j'apprécie les emplois où je peux être autonome, 
+                efficace et apporter des idées concrètes à une équipe.
+
+            </p>
 
         </section>
+
         <!-- BOUTONS -->
+        <p>Cliquez sur les boutons ci dessous pour voir mon parcours dans ces differents domaines !</p>
         <div class="conteneur-3colonnes">
-            <button class="colonne" id="bureautique-btn" onclick="showSection('bureautique')">
-                <svg><image href="./public/computer-device-digital-svgrepo-com.svg" width="120%" height="120%" /></svg>
-                Bureautique
-            </button>
-            <button class="colonne" id="horticulture-btn" onclick="showSection('horticulture')">
-                <svg><image href="./public/leaf-svgrepo-com.svg" width="100%" height="100%" /></svg>
-                Horticulture
-            </button>
-            <button class="colonne" id="graphisme-btn" onclick="showSection('graphisme')">
-                <svg><image href="./public/design-education-painting-svgrepo-com.svg" width="100%" height="100%" /></svg>
-                Graphisme
-            </button>
+            <div class="button-container">
+                <button class="colonne" id="bureautique-btn" onclick="showSection('bureautique')">
+                    <svg>
+                        <image href="./public/computer-device-digital-svgrepo-com.svg" width="100%" height="100%" />
+                    </svg>
+                </button>
+                <p>Bureautique</p>
+            </div>
+            <div class="button-container">
+                <button class="colonne" id="horticulture-btn" onclick="showSection('horticulture')">
+                    <svg>
+                        <image href="./public/leaf-svgrepo-com.svg" width="100%" height="100%" />
+                    </svg>
+                </button>
+                <p>Horticulture</p>
+            </div>
+            <div class="button-container">
+                <button class="colonne" id="graphisme-btn" onclick="showSection('graphisme')">
+                    <svg>
+                        <image href="./public/design-education-painting-svgrepo-com.svg" width="100%" height="100%" />
+                    </svg>
+                </button>
+                <p>Graphisme</p>
+            </div>
         </div>
 
         <!-- Bureautique -->
         <div id="bureautique">
             <h2>Bureautique</h2>
-            
-            <h3><strong>Logiciels :</strong></h3>
-            
-            <ul>
-                <li>Microsoft Word/Open Office/Google Docs</li>
-                <li>Microsoft Excel/Google Sheets</li>
-                <li>Canva</li>
-                <li>Adobe Acrobat</li>
-                
-            </ul>
 
             <h3><strong>Compétences :</strong></h3>
             <ul>
-                <li>Maîtrise de Microsoft Office (Word, Excel, PowerPoint)</li>
+                <li>Maîtrise des logiciels de bureautique : Microsoft Office (Word, Excel, PowerPoint) et Google
+                    Workspace</li>
                 <li>Gestion et organisation de documents (numériques et papier)</li>
                 <li>Archivage et classement de dossiers</li>
                 <li>Saisie et structuration de données</li>
+                <li>Acquisition de compétences en développement web front-end (HTML, CSS, JavaScript)</li>
             </ul>
-            
-            <h3><strong>Perfectionnement:</strong></h3>
-            <ul>
-                <li>Apprentissage html/Css/JavaScript</li>
-            </ul>
+            <div id="Expérience professionnelle">
+                <h3><strong>Expérience professionnelle :</strong></h3>
+                <ul>
+                    <li><strong>Stagiaire chez Artubeats Global Marketing SL - Saragosse ( Espagne ), [2025] </strong>
+                        <ul>
+                            <li>Création et structuration d'une base de données de 150+ clients prospects pour le marché français avec segmentation par secteur</li>
+                        </ul>
+                    </li>
+                    <li><strong>Stagiaire chez garagErasmus foundation - Vicence ( Italie ), [2024] </strong>
+                        <ul>
+                            <li>Gestion de la documentation administrative, organisation de dossiers et soutien à la communication interne</li>
+                            <li>Adaptation et localisation d'une page web traduite en français</li>
+                            <li>Création de supports visuels pour les réseaux sociaux et la communication interne</li>
+                            <li>Animation du logo de la fondation</li>
+                        </ul>
+                    </li>    
+                    <li><strong>Stagiaire chez ASSO Groupe - Bordères-sur-l'Echez ( France ), [2022-2023] </strong>       
+                        <ul>
+                            <li>Création du logo de l'entreprise</li>
+                            <li>Participation à la conception de matériel promotionnel</li>
+                            <li>Montage vidéo pour produire du contenu explicatif</li>
+                            <li>Réalisation d'un scénarimage (storyboard) pour une vidéo promotionnelle</li>
+                        </ul>
+                    </li>
+                    <li><strong>Archiviste - Pau ( France ), [2018] </strong>
+                        <ul>
+                            <li>Traitement quotidien de 100 à 200 documents administratifs et techniques</li>
+                            <li>Classement et organisation de dossiers numériques et papier</li>
+                            <li>Archivage de documents liés aux centrales hydroélectriques et bureaux administratifs</li>
+                            <li>Maintien d'un système de classement assurant l'accès rapide et le suivi des dossiers</li>
+                        </ul>  
+                </li>
+                    
+
+                </ul>
+            </div>
         </div>
+
         <!-- Horticulture -->
         <div id="horticulture">
+        <div id="formations">
             <h2>Horticulture</h2>
-            <p><strong>Compétences :</strong></p>
+            <h3><strong>Formations :</strong></h3>
+            <h4><strong>Bac Professionnel Production Horticole - [2017-2019] </strong></h4>
+            <h4><strong>BEPA Travaux Horticole - [2016-2018] </strong></h4>
+                <p>
+                    Formation professionnelle en production horticole
+                    Lycée Professionnel Adriana de Tarbes, Ibos, France
+                </p>
+            </div>       
+            <h><strong>Compétences :</strong></p>
             <ul>
                 <li>Semis en plaques alvéolées et production de jeunes plants</li>
                 <li>Bouturage et multiplication de différentes espèces végétales</li>
                 <li>Mise en pot de semis avec système racinare developpé</li>
                 <li>Entretien de serres</li>
-                <li>Aménagment des serres pour la protection des plantes en hiver</li>
+                <li>Aménagement des serres pour la protection des plantes en hiver</li>
                 <li>Création et composition de jardinières fleuries avec divers mélanges de plantes</li>
                 <li>Préparation d'arrangements floraux</li>
                 <li>Préparation et déplacement de chariots pour l'organisation des espaces de culture</li>
             </ul>
+            <div id="Experience professionnelle">
+                <h3><strong>Expérience professionnelle :</strong></h3>
+            <ul>
+                <li><strong>Stagiaire chez Pépinière Lacrouts - Sanous ( France ), [2024] </strong>
+                    <ul>
+                        <li>Réalisation de semis de 20+ espèces par semaine en plaques alvéolées</li>
+                        <li>Effectué le bouturage de 10+ espèces par jour, totalisant plusieurs centaines par saison</li>
+                        <li>Aménagé et organisé 6 serres de production afin d'assurer la protection hivernale des plantes</li>
+                        <li>Assuré l'entretien et la propreté de l'espace accessible au public</li>
+                    </ul>
+                </li>
+                <li><strong>Stagiaire chez Fleurs et Jardin - Vic-en-Bigorre (France), [2015-2016] </strong>
+                    <ul>
+                        <li>Mise en pot de 50+ semis par semaine semis avec un système racinaire bien développé.</li>
+                        <li>Création de 20+ jardinières fleuries en combinant différents mélanges de fleurs</li>
+                        <li>Préparé 30+ arrangements floraux par semaine destinés à la vente</li>
+                        <li>Assuré l'entretien de 2 serres (production et vente) en maintenant des conditions optimales pour des centaines de plants</li>
+                        <li>Approvisionné et rempli 10+ chariots de plantes par jour pour la vente sur les marchés locaux</li>
+                    </ul>
+                </li>
+                
+            </ul>    
         </div>
+    </div>
         <!-- Graphisme -->
         <div id="graphisme">
             <h2>Graphisme et Art</h2>
-
+            <h3><strong>Formations :</strong></h3>
+            <h4><strong>Bachelor Narrative et Digital art - [2019-2022] </strong></h4>
+                <p>
+                    Études postsecondaires en arts numériques
+                    Institut ANATEN, Hautes- Pyrénées, Tarbes, France
+                </p>
             <h3><strong>Logiciels :</strong></h3>
-            
+
             <ul>
                 <li>Blender</li>
                 <li>Adobe Photoshop/photopea</li>
@@ -134,38 +217,46 @@
                 <li>Zbrush</li>
                 <li>Clip studio paint</li>
                 <li>FireAlpaca</li>
-                
+
             </ul>
-            <p><strong>Compétences :</strong></p>
+            <h3><strong>Compétences :</strong></h3>
             <ul>
                 <li>Illustration et design graphique</li>
                 <li>Modélisation 3D</li>
                 <li>Design pour le web</li>
                 <li>Création de Storyboards</li>
                 <li>Rédactions de scénarios</li>
-            </ul>
-
-            
-            <h3><strong>Perfectionnement:</strong></h3>
-            <ul>
-                <li>Apprentissage html/Css/JavaScript (en cours)</li>
+                <li>Acquisition de compétences en développement web front-end (HTML, CSS, JavaScript)</li>
                 <li>Apprentissage du Python (en cours)</li>
                 <li>Apprentissage pour la créations de haircards (Blender, Fibershop)</li>
-            </ul>
+            </ul>    
         </div>
+        <!-- Langues -->
+        <div id="langues">
 
-        <div id="autres">
+            <h4>Langues :
+                <ul>
+                    <li>🇫🇷 Français (langue maternelle)</li>
+                    <li>🇬🇧 Anglais (niveau C1)</li>
+                    <li>🇪🇸 Italien (A2)</li>
+                    <li>🇮🇹 Espagnol (A2)</li>
+                </ul>
+        </div>
+        <!-- Softs Skills -->
+        <div id="softs-skills">
             <!-- Autres -->
-             <h3>Soft skills :</h3>
-             <!-- <h4>Compétences interpersonnelles :</h4>// -->
-             <h4>Langues :</div>
+            <h3>Soft skills :</h3>
             <ul>
-                <li>Français (langue maternelle)</li>
-                <li>Anglais (niveau intermédiaire B2-C1)</li>
-                <li>Notions d'italien </li>
-                <li>Notions d'espagnol </li>
+                <li>Travail en équipe<br></li>
+                <li>Autonomie<br></li>
+                <li>Créativité<br></li>
+                <li>Esprit d'initiative<br></li>
+                <li>Polyvalence<br></li>
+                <li>Capacité d'adaptation<br></li>
             </ul>
-        </div>   
+
+            <!-- <h4>Compétences interpersonnelles :</h4>// -->
+        </div>
         <!-- CONTACTS -->
         <div id="contacts">
             <h2>Contacts</h2>
@@ -174,7 +265,7 @@
                 <a href="mailto:cecocchiola@outlook.fr">cecocchiola@outlook.fr</a>
             </p>
         </div>
-        
+
         <section class="footer">
             <p>&copy; 2026 Charlène C. Tous droits réservés. </p>
             <p><a href="mentions-legales.html">Mentions légales</a></p>
@@ -183,4 +274,5 @@
 
     <script src="cv_propre.js"></script>
 </body>
+
 </html>
