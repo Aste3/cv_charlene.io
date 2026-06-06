@@ -5,12 +5,26 @@ window.addEventListener("load", () => {
   if (hash) {
     showSection(hash);
   }
-});
+}); 
 
-const isIndexPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+console.log("CV interactif chargé et prêt à l'emploi !"+window.location.pathname);
+// ancienne alerte de bienvenue //
+const isIndexPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("/");
 if (isIndexPage) {
   alert("Bienvenue sur mon CV interactif ! Cliquez sur les sections pour en savoir plus sur mes compétences et expériences. N'hésitez pas à changer de thème et de langue pour une expérience personnalisée. Bonne visite ! PS je suis en train de développer ce CV, alors certaines fonctionnalités sont encore en cours de construction. Merci de votre patience !");
+} else {
+  console.log("On est pas sur la page d'accueil, pas d'alerte de bienvenue.");
 }
+
+// const pathname = window.location.pathname;
+// const isIndexPage =
+//   pathname === "/" ||
+//   pathname.endsWith("/index.html") ||
+//   pathname.endsWith("/");
+
+// if (isIndexPage) {
+//   alert("Bienvenue sur mon CV interactif ...");
+// }
 
 // Mode dark/light
 const themeBtn = document.getElementById("themeBtn");
