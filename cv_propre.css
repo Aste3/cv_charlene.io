@@ -89,6 +89,7 @@ body.dark-mode button {
     padding: 18px 16px 12px;
     min-width: 140px;
     max-width: 180px;
+    height: 222px;
     opacity: 0;
     transform: translateY(20px);
     animation: sectionFadeIn 0.6s ease forwards;
@@ -118,27 +119,27 @@ body.dark-mode button {
     transform: scale(0.7);
     animation: buttonPop 0.35s cubic-bezier(0.22,1,0.36,1) forwards;
 }
-#bureautique-btn{
+#game_art_dev-btn{
     background-color: rgb(255, 46, 46);
     animation-delay: 0.35s;
 }
-#bureautique-btn:hover{
+#game_art_dev-btn:hover{
     background-color:rgb(252, 96, 96);
     transform: scale(1.05);
 }
-#horticulture-btn{
+#autre-btn{
     background-color: rgb(6, 220, 31);
     animation-delay: 0.55s;
 }
-#horticulture-btn:hover{
+#autre-btn:hover{
     background-color:rgb(71, 224, 89);
     transform: scale(1.05);
 }
-#graphisme-btn{
+#design-btn{
     background-color: rgb(177, 46, 136);
     animation-delay: 0.75s;
 }
-#graphisme-btn:hover{
+#design-btn:hover{
     background-color:rgb(176, 69, 147);
     transform: scale(1.05);
 }
@@ -224,16 +225,16 @@ body.dark-mode .conteneur-3colonnes .colonne {
 
 
 /* Sections */
-#bureautique,
-#horticulture,
-#graphisme {
+#game_art_dev,
+#autre,
+#design {
     display: none;
     margin-top: 30px;
     /* border: 2px solid white; */
     padding: 20px;
 }
 
-#bureautique {
+#game_art_dev {
     display: block;
 }
 

@@ -75,34 +75,36 @@
         <p>Cliquez sur les boutons ci dessous pour voir mon parcours dans ces differents domaines !</p>
         <div class="conteneur-3colonnes">
             <div class="button-container">
-                <button class="colonne" id="bureautique-btn" onclick="showSection('bureautique')">
+                <button class="colonne" id="game_art_dev-btn" onclick="showSection('game_art_dev')">
                     <svg>
                         <image href="./public/computer-device-digital-svgrepo-com.svg" width="100%" height="100%" />
                     </svg>
                 </button>
-                <p>Bureautique</p>
+                <p>Game Art & Dev</p>
             </div>
             <div class="button-container">
-                <button class="colonne" id="horticulture-btn" onclick="showSection('horticulture')">
-                    <svg>
-                        <image href="./public/leaf-svgrepo-com.svg" width="100%" height="100%" />
-                    </svg>
-                </button>
-                <p>Horticulture</p>
-            </div>
-            <div class="button-container">
-                <button class="colonne" id="graphisme-btn" onclick="showSection('graphisme')">
+                <button class="colonne" id="design-btn" onclick="showSection('design')">
                     <svg>
                         <image href="./public/design-education-painting-svgrepo-com.svg" width="100%" height="100%" />
                     </svg>
                 </button>
-                <p>Graphisme</p>
+                <p>Design de marque & communication visuelle</p>
+            </div>
+            <div class="button-container">
+                <button class="colonne" id="autre-btn" onclick="showSection('autre')">
+                    <svg>
+                        <image href="./public/leaf-svgrepo-com.svg" width="100%" height="100%" />
+                    </svg>
+                </button>
+                <p>Autres compétences</p>
             </div>
         </div>
 
-        <!-- Bureautique -->
-        <div id="bureautique">
-            <h2>Bureautique</h2>
+        <!--deplacement section vers leurs page respective en cours
+
+        <!-- Game art et Dev -->
+        <div id="game_art_dev">
+            <h2>Game Art et Dev</h2>
 
             <h3><strong>Compétences :</strong></h3>
             <ul>
@@ -151,64 +153,18 @@
             </div>
         </div>
 
-        <!-- Horticulture -->
-        <div id="horticulture">
-        <div id="formations">
-            <h2>Horticulture</h2>
-            <h3><strong>Formations :</strong></h3>
-            <h4><strong>Bac Professionnel Production Horticole - [2017-2019] </strong></h4>
-            <h4><strong>BEPA Travaux Horticole - [2016-2018] </strong></h4>
-                <p>
-                    Formation professionnelle en production horticole
-                    Lycée Professionnel Adriana de Tarbes, Ibos, France
-                </p>
-            </div>       
-            <h3><strong>Compétences :</strong></h3>
-            <ul>
-                <li>Semis en plaques alvéolées et production de jeunes plants</li>
-                <li>Bouturage et multiplication de différentes espèces végétales</li>
-                <li>Mise en pot de semis avec système racinare developpé</li>
-                <li>Entretien de serres</li>
-                <li>Aménagement des serres pour la protection des plantes en hiver</li>
-                <li>Création et composition de jardinières fleuries avec divers mélanges de plantes</li>
-                <li>Préparation d'arrangements floraux</li>
-                <li>Préparation et déplacement de chariots pour l'organisation des espaces de culture</li>
-            </ul>
-            <div id="Experience professionnelle">
-                <h3><strong>Expérience professionnelle :</strong></h3>
-            <ul>
-                <li><strong>Stagiaire chez Pépinière Lacrouts - Sanous ( France ), [2024] </strong>
-                    <ul>
-                        <li>Réalisation de semis de 20+ espèces par semaine en plaques alvéolées</li>
-                        <li>Effectué le bouturage de 10+ espèces par jour, totalisant plusieurs centaines par saison</li>
-                        <li>Aménagé et organisé 6 serres de production afin d'assurer la protection hivernale des plantes</li>
-                        <li>Assuré l'entretien et la propreté de l'espace accessible au public</li>
-                    </ul>
-                </li>
-                <li><strong>Stagiaire chez Fleurs et Jardin - Vic-en-Bigorre (France), [2015-2016] </strong>
-                    <ul>
-                        <li>Mise en pot de 50+ semis par semaine semis avec un système racinaire bien développé.</li>
-                        <li>Création de 20+ jardinières fleuries en combinant différents mélanges de fleurs</li>
-                        <li>Préparé 30+ arrangements floraux par semaine destinés à la vente</li>
-                        <li>Assuré l'entretien de 2 serres (production et vente) en maintenant des conditions optimales pour des centaines de plants</li>
-                        <li>Approvisionné et rempli 10+ chariots de plantes par jour pour la vente sur les marchés locaux</li>
-                    </ul>
-                </li>
-                
-            </ul>    
-        </div>
-    </div>
-        <!-- Graphisme -->
-        <div id="graphisme">
-            <h2>Graphisme et Art</h2>
+       
+        <!-- Design de marque & communication visuelle  -->
+        <div id="design">
+            <h2>Design de marque & communication visuelle</h2>
             <h3><strong>Formations :</strong></h3>
             <h4><strong>Bachelor Narrative et Digital art - [2019-2022] </strong></h4>
-                <p>
-                    Études postsecondaires en arts numériques
-                    Institut ANATEN, Hautes- Pyrénées, Tarbes, France
-                </p>
+            <p>
+                Études postsecondaires en arts numériques
+                Institut ANATEN, Hautes- Pyrénées, Tarbes, France
+            </p>
             <h3><strong>Logiciels :</strong></h3>
-
+            
             <ul>
                 <li>Blender</li>
                 <li>Adobe Photoshop/photopea</li>
@@ -217,7 +173,7 @@
                 <li>Zbrush</li>
                 <li>Clip studio paint</li>
                 <li>FireAlpaca</li>
-
+                
             </ul>
             <h3><strong>Compétences :</strong></h3>
             <ul>
@@ -225,11 +181,59 @@
                 <li>Modélisation 3D</li>
                 <li>Design pour le web</li>
                 <li>Création de Storyboards</li>
-                <li>Rédactions de scénarios</li>
+                <li>Rédaction de scénarios</li>
                 <li>Acquisition de compétences en développement web front-end (HTML, CSS, JavaScript)</li>
                 <li>Apprentissage du Python (en cours)</li>
                 <li>Apprentissage pour la créations de haircards (Blender, Fibershop)</li>
             </ul>    
+        </div>
+       
+        <!-- Autre compétences -->
+        <div id="autre">
+            <div id="formations">
+                <h2>Autres compétences</h2>
+                <h3><strong>Formations :</strong></h3>
+                <h4><strong>Bac Professionnel Production Horticole - [2017-2019] </strong></h4>
+                <h4><strong>BEPA Travaux Horticole - [2016-2018] </strong></h4>
+                    <p>
+                        Formation professionnelle en production horticole
+                        Lycée Professionnel Adriana de Tarbes, Ibos, France
+                    </p>
+                </div>       
+                <h3><strong>Compétences :</strong></h3>
+                <ul>
+                    <li>Semis en plaques alvéolées et production de jeunes plants</li>
+                    <li>Bouturage et multiplication de différentes espèces végétales</li>
+                    <li>Mise en pot de semis avec système racinare developpé</li>
+                    <li>Entretien de serres</li>
+                    <li>Aménagement des serres pour la protection des plantes en hiver</li>
+                    <li>Création et composition de jardinières fleuries avec divers mélanges de plantes</li>
+                    <li>Préparation d'arrangements floraux</li>
+                    <li>Préparation et déplacement de chariots pour l'organisation des espaces de culture</li>
+                </ul>
+                <div id="Experience professionnelle">
+                    <h3><strong>Expérience professionnelle :</strong></h3>
+                <ul>
+                    <li><strong>Stagiaire chez Pépinière Lacrouts - Sanous ( France ), [2024] </strong>
+                        <ul>
+                            <li>Réalisation de semis de 20+ espèces par semaine en plaques alvéolées</li>
+                            <li>Effectué le bouturage de 10+ espèces par jour, totalisant plusieurs centaines par saison</li>
+                            <li>Aménagé et organisé 6 serres de production afin d'assurer la protection hivernale des plantes</li>
+                            <li>Assuré l'entretien et la propreté de l'espace accessible au public</li>
+                        </ul>
+                    </li>
+                    <li><strong>Stagiaire chez Fleurs et Jardin - Vic-en-Bigorre (France), [2015-2016] </strong>
+                        <ul>
+                            <li>Mise en pot de 50+ semis par semaine semis avec un système racinaire bien développé.</li>
+                            <li>Création de 20+ jardinières fleuries en combinant différents mélanges de fleurs</li>
+                            <li>Préparé 30+ arrangements floraux par semaine destinés à la vente</li>
+                            <li>Assuré l'entretien de 2 serres (production et vente) en maintenant des conditions optimales pour des centaines de plants</li>
+                            <li>Approvisionné et rempli 10+ chariots de plantes par jour pour la vente sur les marchés locaux</li>
+                        </ul>
+                    </li>
+                    
+                </ul>    
+            </div>
         </div>
         <!-- Langues -->
         <div id="langues">
@@ -254,7 +258,6 @@
                 <li>Polyvalence<br></li>
                 <li>Capacité d'adaptation<br></li>
             </ul>
-
             <!-- <h4>Compétences interpersonnelles :</h4>// -->
         </div>
         <!-- CONTACTS -->
