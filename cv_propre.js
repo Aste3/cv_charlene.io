@@ -11,7 +11,7 @@ console.log("CV interactif chargé et prêt à l'emploi !"+window.location.pathn
 // ancienne alerte de bienvenue //
 const isIndexPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("/");
 if (isIndexPage) {
-  alert("Bienvenue sur mon CV interactif ! Cliquez sur les sections pour en savoir plus sur mes compétences et expériences. N'hésitez pas à changer de thème et de langue pour une expérience personnalisée. Bonne visite ! PS je suis en train de développer ce CV, alors certaines fonctionnalités sont encore en cours de construction. Merci de votre patience !");
+  // alert("Bienvenue sur mon CV interactif ! Cliquez sur les sections pour en savoir plus sur mes compétences et expériences. N'hésitez pas à changer de thème et de langue pour une expérience personnalisée. Bonne visite ! PS je suis en train de développer ce CV, alors certaines fonctionnalités sont encore en cours de construction. Merci de votre patience !");
 } else {
   console.log("On est pas sur la page d'accueil, pas d'alerte de bienvenue.");
 }
@@ -96,8 +96,8 @@ document.addEventListener("click", (e) => {
 
 // Afficher/Masquer les sections
 function showSection(sectionId) {
-  // Masquer toutes les sections
-  const sections = document.querySelectorAll("#bureautique, #horticulture, #graphisme");
+  // Masquer toutes les sections ciblées par les boutons
+  const sections = document.querySelectorAll("#game_art_dev, #autre, #design");
   sections.forEach(section => {
     section.style.display = "none";
   });

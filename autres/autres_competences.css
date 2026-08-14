@@ -1,4 +1,4 @@
- body {
+body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #121212;
@@ -35,8 +35,138 @@
 
         .game_art_dev {
         text-align: center;
-        }
+}
 
+/* NAVBAR */
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #111;
+  color: white;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin: auto 0px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Burger */
+.burger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Dropdown langue */
+.lang-dropdown {
+  position: relative;
+}
+
+#langBtn {
+  background: none;
+  /* border: 1px solid white; */
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#langMenu {
+  position: absolute;
+  right: 0;
+  background: white;
+  color: black;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+  display: none;
+  min-width: 150px;
+}
+
+#langMenu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#langMenu li:hover {
+  background: #eee;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+/* FOOTER */
+.footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* Animations */
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonPop {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+        
 .projects-container {
     max-width: 1000px;
     width: 90%;
@@ -46,8 +176,84 @@
     justify-content: center; /* centre les boîtes horizontalement */
     align-items: flex-start;
     flex-wrap: wrap; /* passe à la ligne sur petits écrans */
+    align-items: center;
 }
-        
+
+.entete_garage_erasmus,
+.logo_asso_groupe {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 320px; /* largeur souhaitée par boîte */
+     height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: flex; /* centre vertical et horizontal du contenu */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex: 0 1 320px; /* permet le comportement responsive dans le conteneur flex */
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Burger */
+.burger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Dropdown langue */
+.lang-dropdown {
+  position: relative;
+}
+
+#langBtn {
+  background: none;
+  /* border: 1px solid white; */
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#langMenu {
+  position: absolute;
+  right: 0;
+  background: white;
+  color: black;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+  display: none;
+  min-width: 150px;
+}
+
+#langMenu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#langMenu li:hover {
+  background: #eee;
+}
+@media (max-width: 420px) {
+    .sylvae,
+    .divine {
+        max-width: 100%;
+        height: 180px;
+        flex: 1 1 100%;
+    }
+}
 .sylvae,
 .divine {
     box-sizing: border-box;
@@ -72,3 +278,15 @@
     }
 }
 
+.autres_competences {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+
+}
+
+.animated {
+    animation: sectionFadeIn 1s ease-in-out;
+}
