@@ -8,6 +8,8 @@
     <title>CV Charlène C.</title>
     <!-- LIEN VERS LE CSS -->
     <link rel="stylesheet" href="design_de_marque.css" />
+    <!-- LIEN VERS LE JS -->
+    <script src="design_de_marque.js" defer></script>
 </head>
 
 <body>
@@ -58,19 +60,51 @@
     </div>
 
     <div class="projects-container">
-        <div class="garagErasmus projet"><img src="../img/header_V2.png" alt="Logo Garage Erasmus" class="entete_garage_erasmus design_de_marque animated " />
-            <p>garagErasmus Foundation</p>
+        <div class="projet">
+            <img src="../img/header_V2.png" alt="Logo Garage Erasmus" class="entete_garage_erasmus design_de_marque animated project-img" data-project="garagErasmus" />
+            <p class="animated">garagErasmus Foundation</p>
         </div>
-
-        <div class="ASSO groupe projet"><img src="../img/logo_marie_laure_3.png" alt="Logo ASSO Groupe" class="logo_asso_groupe design_de_marque animated " />
-            <p>Alfa Solaire Sud-Ouest</p>
+        
+        <div class="projet">
+            <img src="../img/logo_vector_4_avec_panneau2.png" alt="Logo ASSO Groupe" class="logo_asso_groupe design_de_marque animated project-img" data-project="ASSO_GROUPE" />
+            <p class="animated">Alfa Solaire Sud-Ouest</p>
+        </div>
+        <div class="gallery hidden" id="gallery_garagErasmus">
+            <!-- Les images supplémentaires apparaîtront ici -->
+            <img src="../img/header_v2.png" class="project-img" alt="Garage 1" />
+            <img src="../img/header_logo_BRIGHTS_2.png" class="project-img" alt="Garage 2" />
+            <img src="../img/footer_visual_modif_v2.png" class="project-img" alt="Garage 3" />
+            <img src="../img/all_logo_mail_v2.png" class="project-img" alt="Garage 4" />
+            <img src="../img/tote_bag_logo1_fond.png" class="project-img" alt="Garage 5" />
+            <img src="../img/tote_bag_logo2_fond.png" class="project-img" alt="Garage 6" />
+        </div>
+        <div class="gallery hidden" id="gallery_ASSO_GROUPE">
+            <!-- Les images supplémentaires apparaîtront ici -->
+            <img src="../img/logo_vector_4_avec_panneau2.png" class="project-img" alt="Alfa Solaire Sud-Ouest logo 1" />
+            <img src="../img/asso_3_rayon_3_testfond1b_vector6.png" class="project-img" alt="Alfa Solaire Sud-Ouest logo 2" />
+            <img src="../img/logo_asso_3.png" class="project-img" alt="Alfa Solaire Sud-Ouest logo 3" />
+            <img src="../img/logo_asso_5.png" class="project-img" alt="Alfa Solaire Sud-Ouest logo 4" />
         </div>
     </div>
+        <!-- <div class="gallery hidden" id="gallery_garagErasmus">
+         ...
+        </div>
+
+        <div class="gallery hidden" id="gallery_ASSO_GROUPE">
+        ...
+        </div>
+        </div>
+    </div> -->
     <div class="footer">
         <a href="../game_art_and_dev/game_art_dev.html">Game Art et Dev</a>
         <a href="../design/design_de_marque.html">Design de Marque</a>
         <a href="../autres/autres_competences.html">Autres compétences</a>
         <p>&copy; 2026 Charlène C. Tous droits réservés.</p>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fermer la Lightbox">&times;</button>
+        <img id="lightboxImage" src="" alt="" />
     </div>
     </div>
 </body>

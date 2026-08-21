@@ -108,3 +108,50 @@ function showSection(sectionId) {
     selectedSection.style.display = "block";
   }
 }
+
+const container = document.querySelector(".butterfly-container");
+
+function createButterfly(side) {
+
+    const butterfly = document.createElement("div");
+
+    butterfly.classList.add("butterfly");
+
+    // Position horizontale
+    if (side === "left") {
+        butterfly.style.left = Math.random() * 18 + "vw";
+    } else {
+        butterfly.style.right = Math.random() * 18 + "vw";
+    }
+
+    // Taille aléatoire
+    const size = Math.random() * 0.8 + 0.6;
+
+    // Vitesse aléatoire
+    const duration = Math.random() * 5 + 5;
+
+    // Mouvement horizontal
+    const movement = (Math.random() * 80 - 40) + "px";
+
+    butterfly.style.setProperty("--size", size);
+    butterfly.style.setProperty("--duration", duration + "s");
+    butterfly.style.setProperty("--movement", movement);
+
+    // Décalage aléatoire
+    butterfly.style.animationDelay =
+        "-" + Math.random() * duration + "s";
+
+    container.appendChild(butterfly);
+}
+
+
+// Papillons à gauche
+for (let i = 0; i < 10; i++) {
+    createButterfly("left");
+}
+
+
+// Papillons à droite
+for (let i = 0; i < 10; i++) {
+    createButterfly("right");
+}
