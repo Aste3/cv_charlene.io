@@ -555,3 +555,76 @@ ul li + li {
         scale: 0.75 1;
     }
 }
+
+
+/* =========================
+   RÉINITIALISATION
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+
+/* =========================
+   BODY
+   ========================= */
+
+body {
+    background-color: #232323;
+    color: white;
+}
+
+
+/* =========================
+   FOND ANIMÉ
+   ========================= */
+
+#network-background {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CONTENU DU SITE
+   ========================= */
+
+.site-content {
+    position: relative;
+
+    z-index: 1;
+
+    min-height: 100vh;
+
+    padding: 50px;
+}
+
+
+/* =========================
+   EXEMPLE DE CONTENU
+   ========================= */
+
+.site-content h1 {
+    font-size: 50px;
+}
+
+.site-content p {
+    font-size: 20px;
+}
