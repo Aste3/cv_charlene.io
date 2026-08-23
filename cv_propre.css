@@ -39,14 +39,46 @@ body{
 }
 body.dark-mode{
     /* background-color:#1f1729; */
-    background: linear-gradient(to bottom, #65ff86, #39236c);
+    background-image: url('./img/fond_sombre.png');
+    background-size: cover;
+    background-position: center;
+    /* background: linear-gradient(to bottom, #0c7e24 , #39236c); */
     color:#ffffff;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 body.light-mode{
-    background: linear-gradient(to bottom, #fff0f9, #7af527);
+    background-image: url('./img/fond_clair.png');
+    background-size: cover;
+    background-position: center;
+    /* background: linear-gradient(to bottom, #fff0f9, #7af527); */
     color:#000000;
 }
+
+/* ========================================
+   FOND CELLS
+======================================== */
+
+/* /* #cells-background {
+    position: fixed;
+    inset: 0; */
+
+    /* width: 100vw;
+    height: 100vh;
+
+    pointer-events: none;
+
+    z-index: 0; */ */
+
+    /* Transparence générale de l'effet */
+    /* opacity: 0.35;
+} */
+
+/* Le contenu du site reste au-dessus */
+/* body > *:not(#cells-background) {
+    position: relative;
+    z-index: 1;
+} */
+
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -517,11 +549,11 @@ ul li + li {
             translateY(110vh)
             translateX(0)
             scale(var(--size));
-        opacity: 0;
+        opacity: 0.50;
     }
 
     10% {
-        opacity: 1;
+        opacity: 0.30;
     }
 
     50% {
@@ -532,7 +564,7 @@ ul li + li {
     }
 
     90% {
-        opacity: 0.20;
+        opacity: 0.10;
     }
 
     to {
@@ -555,6 +587,8 @@ ul li + li {
         scale: 0.75 1;
     }
 }
+
+
 
 
 /* =========================

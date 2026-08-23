@@ -1,0 +1,61 @@
+body {
+    background-image: url("../img/fond_clair.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #000000;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+    background-image: url("../img/fond_sombre.png");
+    color: #ffffff;
+}
+
+body.light-mode {
+    color: #000000;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode a,
+body.dark-mode button {
+    color: #ffffff;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode p,
+body.light-mode li,
+body.light-mode a,
+body.light-mode button {
+    color: #000000;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .footer,
+body.dark-mode header {
+    background-color: rgba(17, 17, 17, 0.75);
+}
+
+body.light-mode .navbar,
+body.light-mode .footer,
+body.light-mode header {
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+body.dark-mode .card {
+    background-color: rgba(24, 24, 24, 0.85);
+    border-color: #555555;
+}
+
+body.light-mode .card {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-color: #cccccc;
+}

@@ -11,7 +11,7 @@ console.log("CV interactif chargé et prêt à l'emploi !"+window.location.pathn
 // ancienne alerte de bienvenue //
 const isIndexPage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/" || window.location.pathname.endsWith("/");
 if (isIndexPage) {
-  // alert("Bienvenue sur mon CV interactif ! Cliquez sur les sections pour en savoir plus sur mes compétences et expériences. N'hésitez pas à changer de thème et de langue pour une expérience personnalisée. Bonne visite ! PS je suis en train de développer ce CV, alors certaines fonctionnalités sont encore en cours de construction. Merci de votre patience !");
+  alert("Bienvenue sur mon CV interactif ! Cliquez sur les sections pour en savoir plus sur mes compétences et expériences. N'hésitez pas à changer de thème et de langue pour une expérience personnalisée. Bonne visite ! PS je suis en train de développer ce CV, alors certaines fonctionnalités sont encore en cours de construction. Merci de votre patience !");
 } else {
   console.log("On est pas sur la page d'accueil, pas d'alerte de bienvenue.");
 }
@@ -25,33 +25,6 @@ if (isIndexPage) {
 // if (isIndexPage) {
 //   alert("Bienvenue sur mon CV interactif ...");
 // }
-
-// Mode dark/light
-const themeBtn = document.getElementById("themeBtn");
-const body = document.body;
-const storedTheme = localStorage.getItem("theme");
-
-if (storedTheme === "dark-mode") {
-  body.classList.add("dark-mode");
-  themeBtn.textContent = "🌜";
-} else {
-  body.classList.add("light-mode");
-  themeBtn.textContent = "🌞";
-}
-
-themeBtn.addEventListener("click", () => {
-  if (body.classList.contains("dark-mode")) {
-    body.classList.remove("dark-mode");
-    body.classList.add("light-mode");
-    localStorage.setItem("theme", "light-mode");
-  } else {
-    body.classList.remove("light-mode");
-    body.classList.add("dark-mode");
-    localStorage.setItem("theme", "dark-mode");
-  }
-  themeBtn.textContent = body.classList.contains("dark-mode") ? "🌜" : "🌞";
-});
-
 
 //NAVBAR
 // Burger menu
@@ -157,366 +130,346 @@ for (let i = 0; i < 10; i++) {
 }
 
 
+// //CANVAS POUR LES CELLULES//
 
-/* =========================
-   CANVAS PARTICULES
-   ========================= */
+// const canvas = document.createElement("canvas");
+// const ctx = canvas.getContext("2d");
 
-const canvas = document.getElementById("network-background");
-const ctx = canvas.getContext("2d");
+// const cellsBackground = document.getElementById("cells-background");
 
+// cellsBackground.appendChild(canvas);
 
-/* =========================
-   RÉGLAGES DE L'ANIMATION
-   ========================= */
+// canvas.style.width = "100%";
+// canvas.style.height = "100%";
+// canvas.style.display = "block";
 
-const settings = {
 
-    // Nombre de points
-    points: 70,
+// // ========================================
+// // CONFIGURATION
+// // ========================================
 
-    // Distance maximale entre deux points
-    maxDistance: 180,
+// const settings = {
 
-    // Vitesse des points
-    speed: 0.35,
+//     // Nombre de cellules
+//     points: 35,
 
-    // Taille des points
-    pointSize: 2,
+//     // Taille générale
+//     size: 160,
 
-    // Couleur des points et des lignes
-    color: "#22ff88",
+//     // Vitesse
+//     speed: 0.25,
 
-    // Opacité maximale des lignes
-    lineOpacity: 0.35,
+//     // Opacité des cellules
+//     opacity: 0.25,
 
-    // Opacité des points
-    pointOpacity: 0.8,
+//     // Intensité du mouvement
+//     movement: 0.7,
 
-    // Distance d'influence de la souris
-    mouseRadius: 180,
+//     // Interaction souris
+//     mouseInteraction: true,
 
-    // Force d'attraction vers la souris
-    mouseForce: 0.015
-};
+//     // Distance d'influence de la souris
+//     mouseDistance: 180
+// };
 
 
-/* =========================
-   DIMENSIONS DU CANVAS
-   ========================= */
+// // ========================================
+// // CANVAS
+// // ========================================
 
-let width;
-let height;
+// let width;
+// let height;
 
-function resizeCanvas() {
+// function resizeCanvas() {
 
-    width = window.innerWidth;
-    height = window.innerHeight;
+//     const dpr = window.devicePixelRatio || 1;
 
-    const ratio = window.devicePixelRatio || 1;
+//     width = window.innerWidth;
+//     height = window.innerHeight;
 
-    canvas.width = width * ratio;
-    canvas.height = height * ratio;
+//     canvas.width = width * dpr;
+//     canvas.height = height * dpr;
 
-    canvas.style.width = width + "px";
-    canvas.style.height = height + "px";
+//     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+// }
 
-    ctx.setTransform(
-        ratio,
-        0,
-        0,
-        ratio,
-        0,
-        0
-    );
-}
+// resizeCanvas();
 
-window.addEventListener("resize", resizeCanvas);
+// window.addEventListener("resize", resizeCanvas);
 
-resizeCanvas();
 
+// // ========================================
+// // SOURIS
+// // ========================================
 
-/* =========================
-   SOURIS
-   ========================= */
+// const mouse = {
 
-const mouse = {
+//     x: null,
+//     y: null
 
-    x: null,
-    y: null
+// };
 
-};
+// window.addEventListener("mousemove", (event) => {
 
+//     mouse.x = event.clientX;
+//     mouse.y = event.clientY;
 
-window.addEventListener("mousemove", function (event) {
+// });
 
-    mouse.x = event.clientX;
-    mouse.y = event.clientY;
+// window.addEventListener("mouseleave", () => {
 
-});
+//     mouse.x = null;
+//     mouse.y = null;
 
+// });
 
-window.addEventListener("mouseleave", function () {
 
-    mouse.x = null;
-    mouse.y = null;
+// // ========================================
+// // CELLULES
+// // ========================================
 
-});
+// const cells = [];
 
+// for (let i = 0; i < settings.points; i++) {
 
-/* =========================
-   CRÉATION DES PARTICULES
-   ========================= */
+//     cells.push({
 
-const particles = [];
+//         x: Math.random() * window.innerWidth,
 
+//         y: Math.random() * window.innerHeight,
 
-function createParticles() {
+//         size:
+//             settings.size *
+//             (0.55 + Math.random() * 0.9),
 
-    particles.length = 0;
+//         speedX:
+//             (Math.random() - 0.5) *
+//             settings.speed,
 
-    for (let i = 0; i < settings.points; i++) {
+//         speedY:
+//             (Math.random() - 0.5) *
+//             settings.speed,
 
-        particles.push({
+//         rotation:
+//             Math.random() * Math.PI * 2,
 
-            x: Math.random() * width,
-            y: Math.random() * height,
+//         rotationSpeed:
+//             (Math.random() - 0.5) * 0.001,
 
-            vx: (Math.random() - 0.5) * settings.speed,
-            vy: (Math.random() - 0.5) * settings.speed
+//         sides:
+//             Math.floor(5 + Math.random() * 4),
 
-        });
+//         opacity:
+//             0.3 + Math.random() * 0.7
 
-    }
-}
+//     });
 
+// }
 
-createParticles();
 
+// // ========================================
+// // COULEUR
+// // ========================================
 
-/* =========================
-   ANIMATION
-   ========================= */
+// function getCellColor() {
 
-function animate() {
+//     /*
+//        On utilise une couleur blanche
+//        semi-transparente.
 
-    /* Efface l'image précédente */
+//        Elle fonctionne donc aussi bien
+//        avec le mode sombre qu'avec le
+//        mode clair.
+//     */
 
-    ctx.clearRect(
-        0,
-        0,
-        width,
-        height
-    );
+//     return `rgba(255,255,255,${settings.opacity})`;
 
+// }
 
-    /* =========================
-       DÉPLACEMENT
-       ========================= */
 
-    particles.forEach(function (particle) {
+// // ========================================
+// // DESSIN D'UNE CELLULE
+// // ========================================
 
-        particle.x += particle.vx;
-        particle.y += particle.vy;
+// function drawCell(cell) {
 
+//     ctx.save();
 
-        /* Rebond horizontal */
+//     ctx.translate(cell.x, cell.y);
 
-        if (
-            particle.x <= 0 ||
-            particle.x >= width
-        ) {
+//     ctx.rotate(cell.rotation);
 
-            particle.vx *= -1;
+//     ctx.beginPath();
 
-        }
+//     const points = cell.sides;
 
+//     for (let i = 0; i < points; i++) {
 
-        /* Rebond vertical */
+//         const angle =
+//             (Math.PI * 2 / points) * i;
 
-        if (
-            particle.y <= 0 ||
-            particle.y >= height
-        ) {
+//         /*
+//            Petite variation pour éviter
+//            d'avoir des polygones parfaits.
+//         */
 
-            particle.vy *= -1;
+//         const variation =
+//             0.75 +
+//             Math.sin(i * 3.7 + cell.rotation) * 0.18;
 
-        }
+//         const radius =
+//             cell.size * variation;
 
+//         const x =
+//             Math.cos(angle) * radius;
 
-        /* =========================
-           INTERACTION SOURIS
-           ========================= */
+//         const y =
+//             Math.sin(angle) * radius;
 
-        if (
-            mouse.x !== null &&
-            mouse.y !== null
-        ) {
+//         if (i === 0) {
 
-            const dx = mouse.x - particle.x;
-            const dy = mouse.y - particle.y;
+//             ctx.moveTo(x, y);
 
-            const distance = Math.sqrt(
-                dx * dx + dy * dy
-            );
+//         } else {
 
+//             ctx.lineTo(x, y);
 
-            if (
-                distance < settings.mouseRadius
-            ) {
+//         }
 
-                particle.x +=
-                    dx * settings.mouseForce;
+//     }
 
-                particle.y +=
-                    dy * settings.mouseForce;
+//     ctx.closePath();
 
-            }
+//     ctx.fillStyle = getCellColor();
 
-        }
+//     ctx.globalAlpha = cell.opacity;
 
-    });
+//     ctx.fill();
 
+//     ctx.restore();
 
-    /* =========================
-       LIGNES
-       ========================= */
+// }
 
-    for (
-        let i = 0;
-        i < particles.length;
-        i++
-    ) {
 
-        for (
-            let j = i + 1;
-            j < particles.length;
-            j++
-        ) {
+// // ========================================
+// // ANIMATION
+// // ========================================
 
-            const p1 = particles[i];
-            const p2 = particles[j];
+// function animate() {
 
-            const dx = p1.x - p2.x;
-            const dy = p1.y - p2.y;
+//     ctx.clearRect(
+//         0,
+//         0,
+//         width,
+//         height
+//     );
 
-            const distance = Math.sqrt(
-                dx * dx + dy * dy
-            );
 
+//     for (const cell of cells) {
 
-            /* Si les points sont suffisamment proches */
+//         // ----------------------------
+//         // Mouvement naturel
+//         // ----------------------------
 
-            if (
-                distance < settings.maxDistance
-            ) {
+//         cell.x +=
+//             cell.speedX *
+//             settings.movement;
 
-                const opacity =
-                    (
-                        1 -
-                        distance / settings.maxDistance
-                    ) *
-                    settings.lineOpacity;
+//         cell.y +=
+//             cell.speedY *
+//             settings.movement;
 
 
-                ctx.beginPath();
+//         cell.rotation +=
+//             cell.rotationSpeed;
 
-                ctx.moveTo(
-                    p1.x,
-                    p1.y
-                );
 
-                ctx.lineTo(
-                    p2.x,
-                    p2.y
-                );
+//         // ----------------------------
+//         // Interaction souris
+//         // ----------------------------
 
+//         if (
+//             settings.mouseInteraction &&
+//             mouse.x !== null
+//         ) {
 
-                ctx.strokeStyle =
-                    hexToRgba(
-                        settings.color,
-                        opacity
-                    );
+//             const dx =
+//                 cell.x - mouse.x;
 
+//             const dy =
+//                 cell.y - mouse.y;
 
-                ctx.lineWidth = 1;
+//             const distance =
+//                 Math.sqrt(dx * dx + dy * dy);
 
-                ctx.stroke();
 
-            }
+//             if (
+//                 distance <
+//                 settings.mouseDistance
+//             ) {
 
-        }
+//                 const force =
+//                     (settings.mouseDistance - distance)
+//                     / settings.mouseDistance;
 
-    }
+//                 cell.x +=
+//                     (dx / distance) *
+//                     force *
+//                     0.8;
 
+//                 cell.y +=
+//                     (dy / distance) *
+//                     force *
+//                     0.8;
 
-    /* =========================
-       POINTS
-       ========================= */
+//             }
 
-    particles.forEach(function (particle) {
+//         }
 
-        ctx.beginPath();
 
-        ctx.arc(
-            particle.x,
-            particle.y,
-            settings.pointSize,
-            0,
-            Math.PI * 2
-        );
+//         // ----------------------------
+//         // Réapparition sur les bords
+//         // ----------------------------
 
+//         const margin = cell.size * 1.5;
 
-        ctx.fillStyle =
-            hexToRgba(
-                settings.color,
-                settings.pointOpacity
-            );
 
+//         if (cell.x < -margin) {
 
-        ctx.fill();
+//             cell.x = width + margin;
 
-    });
+//         }
 
+//         if (cell.x > width + margin) {
 
-    /* =========================
-       IMAGE SUIVANTE
-       ========================= */
+//             cell.x = -margin;
 
-    requestAnimationFrame(animate);
-}
+//         }
 
+//         if (cell.y < -margin) {
 
-/* =========================
-   CONVERSION HEX → RGBA
-   ========================= */
+//             cell.y = height + margin;
 
-function hexToRgba(hex, opacity) {
+//         }
 
-    hex = hex.replace("#", "");
+//         if (cell.y > height + margin) {
 
-    const r = parseInt(
-        hex.substring(0, 2),
-        16
-    );
+//             cell.y = -margin;
 
-    const g = parseInt(
-        hex.substring(2, 4),
-        16
-    );
+//         }
 
-    const b = parseInt(
-        hex.substring(4, 6),
-        16
-    );
 
+//         // ----------------------------
+//         // Dessin
+//         // ----------------------------
 
-    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-}
+//         drawCell(cell);
 
+//     }
 
-/* =========================
-   LANCEMENT
-   ========================= */
 
-animate();
+//     requestAnimationFrame(animate);
+
+// }
+
+// animate();
