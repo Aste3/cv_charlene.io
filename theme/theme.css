@@ -1,8 +1,39 @@
+@font-face {
+    font-family: "Germanica";
+    src: url("../font/Germanica.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Cormorant";
+    src: url("../font/Cormorant.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Germanica", sans-serif;
+}
+
 body {
+    background-image: url("../img/fond_clair.png");
     background-image: url("../img/fond_clair.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    font-family: "Cormorant", sans-serif;
     color: #000000;
     transition: background-color 0.5s ease, color 0.5s ease;
 }
