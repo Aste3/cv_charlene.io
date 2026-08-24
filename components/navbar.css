@@ -64,6 +64,15 @@
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+body.light-mode #langBtn {
+  color: #111;
+  border-color: rgba(17, 17, 17, 0.5);
+}
+
+body.dark-mode #langBtn {
+  color: white;
+}
+
 #langMenu {
   position: absolute;
   right: 0;
@@ -101,10 +110,14 @@ body.dark-mode #langMenu {
     position: absolute;
     top: 60px;
     right: 0;
-    background: #111;
+    background-color: rgba(255, 255, 255, 0.55);
     flex-direction: column;
     width: 200px;
     display: none;
+  }
+
+  body.dark-mode .nav-links {
+    background-color: rgba(17, 17, 17, 0.75);
   }
 
   .nav-links.active {
