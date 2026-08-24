@@ -128,3 +128,10 @@ body.dark-mode #langMenu {
     display: block;
   }
 }
+
+a.active {
+  background: purple;
+  padding: 3px 5px;
+  font-weight: bold;
+  border-radius: 4px;
+}
