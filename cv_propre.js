@@ -26,48 +26,7 @@ if (isIndexPage) {
 //   alert("Bienvenue sur mon CV interactif ...");
 // }
 
-//NAVBAR
-// Burger menu
-
-const burger = document.getElementById("burger");
-const navLinks = document.getElementById("navLinks");
-
-burger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-
-// Dropdown langue
-const langBtn = document.getElementById("langBtn");
-const langMenu = document.getElementById("langMenu");
-
-langBtn.addEventListener("click", () => {
-  langMenu.style.display =
-    langMenu.style.display === "block" ? "none" : "block";
-});
-
-// Sélection langue
-document.querySelectorAll("#langMenu li").forEach(item => {
-  item.addEventListener("click", () => {
-    const lang = item.getAttribute("data-lang");
-
-    console.log("langue changée à :", lang);
-    alert("Fonction de changement de langue à implémenter : " + lang);
-
-    // Update bouton
-    langBtn.textContent = item.textContent.split(" ")[0] + " " + lang.toUpperCase();
-
-    langMenu.style.display = "none";
-  });
-});
-
-// Fermer si clic ailleurs
-document.addEventListener("click", (e) => {
-  if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
-    langMenu.style.display = "none";
-  }
-});
-
-// Afficher/Masquer les sections
+//  CARDS - Afficher/Masquer les sections
 function showSection(sectionId) {
   // Masquer toutes les sections ciblées par les boutons
   const sections = document.querySelectorAll("#game_art_dev, #autre, #design");
@@ -82,6 +41,7 @@ function showSection(sectionId) {
   }
 }
 
+// BUTTERFLIES ANIMATION
 const container = document.querySelector(".butterfly-container");
 
 function createButterfly(side) {

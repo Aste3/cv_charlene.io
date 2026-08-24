@@ -1,0 +1,117 @@
+/* Navbar */
+#navbar {
+  width: 100%;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(17, 17, 17, 0.2);
+  color: white;
+  z-index: 1000;
+  border-radius: 20px;
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin: auto 0px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Burger */
+.burger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 4px 8px;
+}
+
+/* Dropdown langue */
+.lang-dropdown {
+  position: relative;
+}
+
+#langBtn {
+  background: none;
+  /* border: 1px solid white; */
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border-style: dotted;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+#langMenu {
+  position: absolute;
+  right: 0;
+  background: white;
+  color: black;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0;
+  display: none;
+  min-width: 150px;
+}
+
+body.light-mode #langMenu {
+  background: white;
+  color: #111;
+}
+
+body.dark-mode #langMenu {
+  background: #111;
+  color: white;
+}
+
+#langMenu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#langMenu li:hover {
+  background: #eee;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}

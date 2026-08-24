@@ -9,18 +9,20 @@
     <!-- LIEN VERS LE CSS -->
     <link rel="stylesheet" href="cv_propre.css" />
     <link rel="stylesheet" href="theme/theme.css" />
-    <!-- <link rel="stylesheet" href="background/dark.css" /> -->
     <link rel="icon" type="image/png" href="./public/ico/favicon-32x32.png" />
-    <script src="cv_propre.js" defer></script>
+    <script src="components/navbar.js" defer></script>
+    <link rel="stylesheet" href="components/navbar.css" />
+    <script src="components/footer.js" defer></script>
+    <link rel="stylesheet" href="components/footer.css" />
     <script src="theme/theme.js" defer></script>
-    <!-- <script src="background/dark.js" defer></script> -->
-    <!-- <a href="#bureautique">Aller à la section Bureautique</a>
-    <a href="#horticulture">Aller à la section Horticulture</a>
-    <a href="#graphisme">Aller à la section Graphisme</a> -->
+    <script src="cv_propre.js" defer></script>
 
 </head>
 
 <body>
+    
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
 
     <div class="butterfly-container"></div>
     <!-- <div id="cells-background"></div> -->
@@ -30,110 +32,76 @@
             <button id="toggleSpeed">Vitesse: normale</button>
         </div> -->
 
-        <div class="center-container">
-            <!-- NAVBAR -->
-            <header class="navbar">
-                <div class="nav-container">
-
-                    <div class="logo"></div>
-
-                    <nav class="nav-links" id="navLinks">
-                        <a href="#">Accueil</a>
-                        <a href="#contacts">Contacts</a>
-                        <a href="#">À propos</a>
-                        <!-- Theme light/dark selector -->
-                        <div class="theme-toggle">
-                            <button id="themeBtn">🌞</button>
-                        </div>
-                        <!-- Lang selector -->
-                        <div class="lang-dropdown">
-                            <button id="langBtn">🇬🇧 English</button>
-                            <ul id="langMenu">
-                                <li data-lang="fr">🇫🇷 Français</li>
-                                <li data-lang="en">🇬🇧 English</li>
-                                <li data-lang="es">🇪🇸 Español</li>
-                                <li data-lang="it">🇮🇹 Italiano</li>
-                            </ul>
-                        </div>
-                    </nav>
-
-                    <div class="burger" id="burger">
-                        ☰
-                    </div>
-
-                </div>
-            </header>
+    <div class="center-container">
 
 
-            <!-- Titre -->
-            <div class="title">
-                <h1>Charlène C. </h1>
-                <h2>Montreal, QC<br>Tech et Art</h2>
-            </div>
-            <br></br>
-            <!-- Introdcution -->
-            <section class="introduction">
-                <!-- <p>J'ai développé, au fil de mon parcours, des compétences variées autant dans le travail manuel et créatif que dans les tâches administratives. 
+        <!-- Titre -->
+        <div class="title">
+            <h1>Charlène C. </h1>
+            <h2>Montreal, QC<br>Tech et Art</h2>
+        </div>
+        <br></br>
+        <!-- Introdcution -->
+        <section class="introduction">
+            <!-- <p>J'ai développé, au fil de mon parcours, des compétences variées autant dans le travail manuel et créatif que dans les tâches administratives. 
                 Que ce soit en horticulture, en bureautique ou en graphisme, j'apprécie les emplois où je peux être autonome, 
                 efficace et apporter des idées concrètes à une équipe.
 
             </p> -->
 
-            </section>
+        </section>
 
-            <!-- BOUTONS -->
-            <p>Cliquez sur les boutons ci dessous pour voir mon parcours dans ces differents domaines !</p>
-            <br></br><br></br>
-            <div class="conteneur-3colonnes">
-                <div class="button-container">
-                    <!-- <button class="colonne" id="game_art_dev-btn" onclick="showSection('game_art_dev')">
+        <!-- BOUTONS -->
+        <p>Cliquez sur les boutons ci dessous pour voir mon parcours dans ces differents domaines !</p>
+        <br></br><br></br>
+        <div class="conteneur-3colonnes">
+            <div class="button-container">
+                <!-- <button class="colonne" id="game_art_dev-btn" onclick="showSection('game_art_dev')">
                     <svg>
                         <image href="./public/computer-device-digital-svgrepo-com.svg" width="100%" height="100%" />
                     </svg>
                 </button> -->
-                    <button class="colonne" id="game_art_dev-btn"
-                        onclick="window.location.href='./game_art_and_dev/game_art_dev.html'">
-                        <svg>
-                            <image href="./public/computer-device-digital-svgrepo-com.svg" width="100%" height="100%" />
-                        </svg>
-                    </button>
-                    <p>Game Art & Dev</p>
-                </div>
-                <div class="button-container">
-                    <!-- <button class="colonne" id="design-btn" onclick="showSection('design')">
+                <button class="colonne" id="game_art_dev-btn"
+                    onclick="window.location.href='./game_art_and_dev/game_art_dev.html'">
+                    <svg>
+                        <image href="./public/computer-device-digital-svgrepo-com.svg" width="100%" height="100%" />
+                    </svg>
+                </button>
+                <p>Game Art & Dev</p>
+            </div>
+            <div class="button-container">
+                <!-- <button class="colonne" id="design-btn" onclick="showSection('design')">
                     <svg>
                         <image href="./public/design-education-painting-svgrepo-com.svg" width="100%" height="100%" />
                     </svg>
                 </button> -->
-                    <button class="colonne" id="design-btn"
-                        onclick="window.location.href='./design/design_de_marque.html'">
-                        <svg>
-                            <image href="./public/design-education-painting-svgrepo-com.svg" width="100%"
-                                height="100%" />
-                        </svg>
-                    </button>
-                    <p>Design de marque & communication visuelle</p>
-                </div>
-                <div class="button-container">
-                    <!-- <button class="colonne" id="autre-btn" onclick="showSection('autre')">
+                <button class="colonne" id="design-btn" onclick="window.location.href='./design/design_de_marque.html'">
+                    <svg>
+                        <image href="./public/design-education-painting-svgrepo-com.svg" width="100%" height="100%" />
+                    </svg>
+                </button>
+                <p>Design de marque & communication visuelle</p>
+            </div>
+            <div class="button-container">
+                <!-- <button class="colonne" id="autre-btn" onclick="showSection('autre')">
                     <svg>
                         <image href="./public/leaf-svgrepo-com.svg" width="100%" height="100%" />
                     </svg>
                 </button> -->
-                    <button class="colonne" id="autre-btn"
-                        onclick="window.location.href='./autres/autres_competences.html'">
-                        <svg>
-                            <image href="./public/leaf-svgrepo-com.svg" width="100%" height="100%" />
-                        </svg>
-                    </button>
-                    <p>...et plus</p>
-                </div>
+                <button class="colonne" id="autre-btn"
+                    onclick="window.location.href='./autres/autres_competences.html'">
+                    <svg>
+                        <image href="./public/leaf-svgrepo-com.svg" width="100%" height="100%" />
+                    </svg>
+                </button>
+                <p>...et plus</p>
             </div>
+        </div>
 
-            <!--deplacement section vers leurs page respective en cours -->
+        <!--deplacement section vers leurs page respective en cours -->
 
-            <!-- Game art et Dev -->
-            <!-- <div id="game_art_dev">
+        <!-- Game art et Dev -->
+        <!-- <div id="game_art_dev">
             <h2>Game Art et Dev</h2>
 
             <h3><strong>Compétences :</strong></h3>
@@ -184,8 +152,8 @@
         </div> -->
 
 
-            <!-- Design de marque & communication visuelle  -->
-            <!-- <div id="design">
+        <!-- Design de marque & communication visuelle  -->
+        <!-- <div id="design">
             <h2>Design de marque & communication visuelle</h2>
             <h3><strong>Formations :</strong></h3>
             <h4><strong>Bachelor Narrative et Digital art - [2019-2022] </strong></h4>
@@ -218,8 +186,8 @@
             </ul>    
         </div> -->
 
-            <!-- Autre compétences -->
-            <!-- <div id="autre">
+        <!-- Autre compétences -->
+        <!-- <div id="autre">
             <div id="formations">
                 <h2>Autres compétences</h2>
                 <h3><strong>Formations :</strong></h3>
@@ -264,34 +232,9 @@
                     
                 </ul>    
             </div> -->
-        </div>
-        <!-- Langues -->
-        <!-- <div id="langues">
-
-            <h4>Langues :
-                <ul>
-                    <li>🇫🇷 Français (langue maternelle)</li>
-                    <li>🇬🇧 Anglais (niveau C1)</li>
-                    <li>🇪🇸 Italien (A2)</li>
-                    <li>🇮🇹 Espagnol (A2)</li>
-                </ul>
-        </div> -->
-        <!-- Softs Skills -->
-        <!-- <div id="softs-skills"> -->
-        <!-- Autres -->
-        <!-- <h3>Soft skills :</h3>
-            <ul>
-                <li>Travail en équipe<br></li>
-                <li>Autonomie<br></li>
-                <li>Créativité<br></li>
-                <li>Esprit d'initiative<br></li>
-                <li>Polyvalence<br></li>
-                <li>Capacité d'adaptation<br></li>
-            </ul> -->
-        <!-- <h4>Compétences interpersonnelles :</h4>// -->
+    </div>
     </div>
     <!-- CONTACTS -->
-    <br></br><br></br>
     <div id="contacts">
         <h2>Contacts</h2>
         <p><strong>Adresse :</strong> Montreal, QC, H4G 2M6</p>
@@ -300,11 +243,9 @@
         </p>
     </div>
 
-    <section class="footer">
-        <p>&copy; 2026 Charlène C. Tous droits réservés. </p>
-        <p><a href="mentions-legales.html">Mentions légales</a></p>
-    </section>
+    <div id="footer"></div>
     </div>
+    
 </body>
 
 </html>

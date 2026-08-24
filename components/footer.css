@@ -1,0 +1,14 @@
+/* FOOTER */
+#footer {
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer {
+    background-color: rgba(17, 17, 17, 0.2);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+ 

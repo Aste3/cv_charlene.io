@@ -1,23 +1,33 @@
 const body = document.body;
-const themeBtn = document.getElementById("themeBtn");
-const savedTheme = localStorage.getItem("theme") || "light-mode";
+const themeButtons = document.querySelectorAll("#themeBtn");
+const savedTheme = localStorage.getItem("theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-body.classList.add(savedTheme);
+function applyTheme(theme) {
+  const isDark = theme === "dark-mode";
+  body.classList.toggle("dark-mode", isDark);
+  body.classList.toggle("light-mode", !isDark);
 
-function updateThemeButton() {
-  if (themeBtn) {
-    themeBtn.textContent = body.classList.contains("dark-mode") ? "🌜" : "🌞";
-  }
+  themeButtons.forEach(button => {
+    button.textContent = isDark ? "🌞" : "🌜";
+    button.setAttribute("aria-pressed", String(isDark));
+    button.setAttribute("aria-label", isDark ? "Activer le mode jour" : "Activer le mode nuit");
+    button.setAttribute("title", isDark ? "Activer le mode jour" : "Activer le mode nuit");
+  });
 }
 
-updateThemeButton();
+const initialTheme = savedTheme === "dark" || savedTheme === "dark-mode"
+  ? "dark-mode"
+  : savedTheme === "light" || savedTheme === "light-mode"
+    ? "light-mode"
+    : prefersDark ? "dark-mode" : "light-mode";
 
-themeBtn?.addEventListener("click", () => {
-  const isDark = body.classList.contains("dark-mode");
-  const newTheme = isDark ? "light-mode" : "dark-mode";
+applyTheme(initialTheme);
 
-  body.classList.toggle("dark-mode", !isDark);
-  body.classList.toggle("light-mode", isDark);
-  localStorage.setItem("theme", newTheme);
-  updateThemeButton();
+themeButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const newTheme = body.classList.contains("dark-mode") ? "light-mode" : "dark-mode";
+    localStorage.setItem("theme", newTheme);
+    applyTheme(newTheme);
+  });
 });
